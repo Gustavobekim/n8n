@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: n8n
+    env: node
+    buildCommand: npm install
+    startCommand: npm run start
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
+      - key: N8N_BASIC_AUTH_USER
+        value: "admin"
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: "senha123"
+      - key: WEBHOOK_URL
+        value: https://n8n-SEUSUBDOMINIO.onrender.com/
+      - key: DB_TYPE
+        value: sqlite
